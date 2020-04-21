@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public int timesBounced;
     public int score;
-
 }

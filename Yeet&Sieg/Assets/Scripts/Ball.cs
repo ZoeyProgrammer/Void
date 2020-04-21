@@ -8,6 +8,8 @@ public class Ball : MonoBehaviour
     public float slingcooldown;
     public float maxVelocity;
     public float maxDragDistance;
+    public float bounceCountDelay;
+    private float bounceDelayCounter;
 
     [HideInInspector] public bool isInSling = false;
     [HideInInspector] public SpringJoint2D currentSling;
@@ -15,10 +17,12 @@ public class Ball : MonoBehaviour
     private bool isPressed = false;
 
     Rigidbody2D rb;
+    GameManager gm;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
     }
 
     private void Update()
@@ -75,5 +79,16 @@ public class Ball : MonoBehaviour
             rb.isKinematic = false;
             StartCoroutine(Release());
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == Tags.obstacle && bounceDelayCounter <= 0)
+        {
+            bounceDelayCounter = bounceCountDelay;
+            gm.timesBounced++;
+        }
+        else
+            bounceDelayCounter -= Time.deltaTime;
     }
 }
