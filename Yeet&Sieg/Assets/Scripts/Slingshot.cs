@@ -21,4 +21,12 @@ public class Slingshot : MonoBehaviour
             col.GetComponent<Rigidbody2D>().position = GetComponent<Rigidbody2D>().position + spring.anchor;
         }
     }
+
+    private void Update()   //Probalby not the most beautifull solution, but well.. it works
+    {
+        if (spring.connectedBody == null)
+            GetComponent<CircleCollider2D>().enabled = true;
+        else
+            GetComponent<CircleCollider2D>().enabled = false;
+    }
 }

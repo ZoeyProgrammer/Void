@@ -11,10 +11,10 @@ public class Ball : MonoBehaviour
     public float bounceCountDelay;
     private float bounceDelayCounter;
 
-    [HideInInspector] public bool isInSling = false;
+    public bool isInSling = false;
     [HideInInspector] public SpringJoint2D currentSling;
 
-    private bool isPressed = false;
+    public bool isPressed = false;
 
     Rigidbody2D rb;
     GameManager gm;
