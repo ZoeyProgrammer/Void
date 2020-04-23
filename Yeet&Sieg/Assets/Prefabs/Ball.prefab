@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 326613485345734618}
   - component: {fileID: 6427272803156390946}
   - component: {fileID: 122884331871913248}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ball
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -139,6 +139,9 @@ MonoBehaviour:
   maxVelocity: 60
   maxDragDistance: 7
   bounceCountDelay: 0
+  wallLayers:
+    serializedVersion: 2
+    m_Bits: 1
   isInSling: 0
   currentSling: {fileID: 0}
   isPressed: 0

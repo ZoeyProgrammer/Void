@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3546220485166133753}
   - component: {fileID: 3546220485166133752}
   - component: {fileID: 3546220485166133755}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
