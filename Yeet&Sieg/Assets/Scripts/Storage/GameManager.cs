@@ -6,4 +6,5 @@ public class GameManager : MonoBehaviour
 {
     public int timesBounced;
     public int score;
+    public float height;
 }

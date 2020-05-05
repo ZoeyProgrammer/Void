@@ -42,21 +42,24 @@ public class LevelEditor : EditorWindow
             Debug.Log("Checking for Clipping..");
             //Actually Check for Clipping
         }
+        if(GUILayout.Button("Run Test"))
+        {
+            EditorApplication.isPlaying = true;
+        }
 
         GUILayout.Label("Parameters", EditorStyles.boldLabel);
         snippetName = EditorGUILayout.TextField("Snippet Name", snippetName);
         snippetLength = EditorGUILayout.Slider("Snippet Length", snippetLength, 1f, 20f);
-        difficultyClass = EditorGUILayout.IntField("Difficulty Class", difficultyClass);
-        if(GUILayout.Button("Create Snippet Prefab"))
+        difficultyClass = EditorGUILayout.IntSlider("Difficulty Class", difficultyClass, 0, 20);
+        if(GUILayout.Button("Commit as Prefab"))
         {
             if (CreatePrefab())
+            {
                 Debug.Log("Prefab Creation Successfull");
+                AddPrefabToList();
+            }
             else
                 Debug.Log("Prefab Creation ERROR");
-        }
-        if (GUILayout.Button("Commit Snippet"))
-        {
-            //Code to add that Prefab to Adressables, so the generator can access it.
         }
     }
 
@@ -80,10 +83,21 @@ public class LevelEditor : EditorWindow
 
     private bool CreatePrefab()
     {
-        //Add the Difficulty Class and Length to a new Type, which sits on the Snippet Prefab, so the Generator can access the data.
         GameObject snippet = GameObject.FindGameObjectWithTag(Tags.snippet);
-        bool success = PrefabUtility.SaveAsPrefabAsset(snippet, "Assets/Prefabs/Temporary/" + difficultyClass + "_" + snippetLength + "_" + snippetName + ".prefab", out success);
+        snippet.GetComponent<Snippet>().snippetLength = snippetLength;
+        snippet.GetComponent<Snippet>().difficultyClass = difficultyClass;
+        bool success = PrefabUtility.SaveAsPrefabAsset(snippet, "Assets/Prefabs/Temporary/" + snippetName + ".prefab", out success);
         return success;
+    }
+
+    private void AddPrefabToList()
+    {
+        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Temporary/" + snippetName + ".prefab");
+        SnippetList snippetList = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Temporary/SnippetList.prefab").GetComponent<SnippetList>();
+        if (!snippetList.snippetList.Contains(prefab))
+            snippetList.snippetList.Add(prefab);
+        else
+            Debug.Log("That Prefab was already Comitted!");
     }
 
     private void OnInspectorUpdate()

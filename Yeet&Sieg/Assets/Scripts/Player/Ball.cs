@@ -29,6 +29,9 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
+        if (transform.position.y / 10 > gm.height)
+            gm.height = transform.position.y / 10;
+
         if (isInSling && isPressed)
         {
             Vector2 anchorPos = currentSling.GetComponent<Rigidbody2D>().position;

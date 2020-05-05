@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - LevelEditorWall
+  - Snippet
   layers:
   - Default
   - TransparentFX
