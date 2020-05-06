@@ -52,7 +52,7 @@ public class LevelGenerator : MonoBehaviour
                 genSnippitList.Add(snippet);
         }
 
-        int randomIndex = Random.Range(0, genSnippitList.Count - 1);
+        int randomIndex = Random.Range(0, genSnippitList.Count);
         GameObject genSnippet = Instantiate<GameObject>(genSnippitList[randomIndex], new Vector3(0f,currentGenHeight * 10,0f), Quaternion.identity);
         currentGenHeight += genSnippet.GetComponent<Snippet>().snippetLength;
     }
