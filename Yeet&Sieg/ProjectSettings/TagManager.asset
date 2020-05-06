@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - LevelEditorWall
+  - Snippet
   layers:
   - Default
   - TransparentFX
@@ -47,4 +49,7 @@ TagManager:
     locked: 0
   - name: Ball
     uniqueID: 2536700099
+    locked: 0
+  - name: Foreground
+    uniqueID: 3629582003
     locked: 0
