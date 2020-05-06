@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - LevelEditorWall
+  - Snippet
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Player
   - 
   - 
   - 
@@ -39,6 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 582663845
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ball
+    uniqueID: 2536700099
+    locked: 0
+  - name: Foreground
+    uniqueID: 3629582003
     locked: 0
