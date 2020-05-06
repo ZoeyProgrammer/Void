@@ -44,6 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snippetList:
-  - {fileID: 377281058, guid: 73b4545913aa6414f941843cbb536e48, type: 3}
-  - {fileID: 377281058, guid: 26374ae53a1bc5e4db2e3c4d64ea5494, type: 3}
-  - {fileID: 377281058, guid: 7c6e493ad957bad4d962d406d681371b, type: 3}
+  - {fileID: 377281058, guid: 5e9e7c90b869897498f0cc27a413d908, type: 3}
+  - {fileID: 377281058, guid: 43be0a212ddb6184797f0585ed9ea4fe, type: 3}
+  - {fileID: 377281058, guid: a6285f3ae613bf6429ac893f9a68dc41, type: 3}
+  - {fileID: 377281058, guid: a7a3c45209454154990995d428ffb178, type: 3}
+  - {fileID: 377281058, guid: d054caf60edcf454190e1d540190e2e3, type: 3}
+  - {fileID: 377281058, guid: e7346f2add0779f48a620691a498c00c, type: 3}
+  - {fileID: 377281058, guid: b46589533ff283a47a8605eef4f0067e, type: 3}

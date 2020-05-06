@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   snippetLength: 6
-  difficultyClass: 1
+  difficultyClass: 0
 --- !u!1001 &316142814
 PrefabInstance:
   m_ObjectHideFlags: 0
