@@ -27,10 +27,19 @@ public class MenuController : MonoBehaviour
 
     private void Update()
     {
-        //Open the Main Menu, when the Options Menu gets closed
         if (optionsMenuActive && currentOptionsMenu == null)
         {
             optionsMenuActive = false;
+            OpenMainMenu();
+        }
+        if (scoreboardMenuActive && currentScoreboardMenu == null)
+        {
+            scoreboardMenuActive = false;
+            OpenMainMenu();
+        }
+        if (skinsMenuActive && currentSkinsMenu == null)
+        {
+            skinsMenuActive = false;
             OpenMainMenu();
         }
     }
@@ -61,12 +70,15 @@ public class MenuController : MonoBehaviour
 
     public void OpenScoreboard()
     {
-        //Fetch all Score Data
-        //Open the Scoreboard Screen
+        optionsMenuActive = true;
+        currentOptionsMenu = Instantiate(scoreboardMenu, this.transform);
+        Destroy(currentMainMenu);
     }
 
     public void OpenSkins()
     {
-        //Open Skins Screen
+        optionsMenuActive = true;
+        currentOptionsMenu = Instantiate(skinsMenu, this.transform);
+        Destroy(currentMainMenu);
     }
 }
