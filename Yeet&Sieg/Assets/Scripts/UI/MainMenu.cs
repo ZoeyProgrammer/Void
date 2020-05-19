@@ -1,28 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartGame()
+    MenuController menu;
+
+    private void Start()
     {
-        SceneManager.LoadSceneAsync("GameScene");
+        menu = FindObjectOfType<MenuController>();
     }
 
-    public void OpenOptions()
+    public void PlayButton()
     {
-        //Open the Options Screen
+        menu.StartGame();
     }
 
-    public void OpenScoreboard()
+    public void ScoreButton()
     {
-        //Fetch all Score Data
-        //Open the Scoreboard Screen
+        menu.OpenScoreboard();
     }
 
-    public void Skins()
+    public void OptionsButton()
     {
-        //Open Skins Screen
+        menu.OpenOptions();
+    }
+
+    public void SkinsButton()
+    {
+        menu.OpenSkins();
     }
 }
