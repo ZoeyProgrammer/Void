@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -428,46 +428,46 @@ MonoBehaviour:
     type: 3}
   hcList:
   - minHeight: 0
-    maxHeight: 0
-  - minHeight: 1
     maxHeight: 100
-  - minHeight: 100
+  - minHeight: 101
     maxHeight: 200
-  - minHeight: 200
+  - minHeight: 201
     maxHeight: 300
-  - minHeight: 300
+  - minHeight: 301
     maxHeight: 400
-  - minHeight: 400
+  - minHeight: 401
     maxHeight: 500
-  - minHeight: 500
+  - minHeight: 501
     maxHeight: 600
-  - minHeight: 600
+  - minHeight: 601
     maxHeight: 700
-  - minHeight: 700
+  - minHeight: 701
     maxHeight: 800
-  - minHeight: 800
+  - minHeight: 801
     maxHeight: 900
-  - minHeight: 900
+  - minHeight: 901
     maxHeight: 1000
-  - minHeight: 1000
-    maxHeight: 1100
-  - minHeight: 1100
-    maxHeight: 1200
-  - minHeight: 1200
-    maxHeight: 1300
-  - minHeight: 1300
-    maxHeight: 1400
-  - minHeight: 1400
+  - minHeight: 1001
     maxHeight: 1500
-  - minHeight: 1500
-    maxHeight: 1600
-  - minHeight: 1600
-    maxHeight: 1700
-  - minHeight: 1700
-    maxHeight: 1800
-  - minHeight: 1800
-    maxHeight: 1900
-  - minHeight: 1900
+  - minHeight: 1501
+    maxHeight: 2000
+  - minHeight: 2001
+    maxHeight: 2500
+  - minHeight: 2501
+    maxHeight: 3000
+  - minHeight: 3001
+    maxHeight: 4000
+  - minHeight: 4001
+    maxHeight: 5000
+  - minHeight: 5001
+    maxHeight: 6000
+  - minHeight: 6001
+    maxHeight: 7000
+  - minHeight: 7001
+    maxHeight: 8000
+  - minHeight: 8001
+    maxHeight: 9000
+  - minHeight: 7000
     maxHeight: 20000
   currentGenHeight: 0
   preGenerationLimit: 5
