@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HUD : MonoBehaviour
 {
-    public Text bounceCounter;
+    public TextMeshProUGUI bounceCounter;
+    public TextMeshProUGUI scoreCounter;
 
     GameManager gm;
 
@@ -15,6 +17,7 @@ public class HUD : MonoBehaviour
     }
     private void Update()
     {
-        bounceCounter.text = "Amount of Bounces: " + gm.timesBounced;
+        bounceCounter.text = "Times Bounced: " + gm.timesBounced;
+        scoreCounter.text = "Score: " + Mathf.RoundToInt(gm.height);
     }
 }

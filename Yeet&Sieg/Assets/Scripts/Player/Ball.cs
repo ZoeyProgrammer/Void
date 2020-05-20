@@ -12,6 +12,7 @@ public class Ball : MonoBehaviour
     public LayerMask wallLayers;
     private float bounceDelayCounter;
     private float radius;
+    private bool isScoredAlready = false;
 
     public bool isInSling = false;
     [HideInInspector] public SpringJoint2D currentSling;
@@ -29,8 +30,11 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.y / 10 > gm.height)
+        if (isInSling && !isScoredAlready && transform.position.y / 10 > gm.height)
+        {
             gm.height = transform.position.y / 10;
+            isScoredAlready = true;
+        }
 
         if (isInSling && isPressed)
         {
@@ -92,6 +96,7 @@ public class Ball : MonoBehaviour
 
         yield return new WaitForSeconds(slingcooldown);
         isInSling = false;
+        isScoredAlready = false;
         Debug.Log("Ready to Reload");
     }
 
