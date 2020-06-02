@@ -26,7 +26,6 @@ public class LevelGenerator : MonoBehaviour
         {
             List<GameObject> list = snippetList.snippetList.FindAll(x => x.GetComponent<Snippet>().difficultyClass == i);
             dcList.Add(new DifficultyClass(list, hcList[i]));
-            Debug.Log(i);
             i++;
         }
 
