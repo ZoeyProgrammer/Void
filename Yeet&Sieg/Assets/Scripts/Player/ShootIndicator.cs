@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShootIndicator : MonoBehaviour
 {
-    public float tolerance;
     public GameObject arrows;
 
     private GameObject currentArrows = null;
@@ -56,12 +55,9 @@ public class ShootIndicator : MonoBehaviour
 
     private void MoveArrows()
     {
-        if (Vector3.Distance(slingPos,ballPos) <= tolerance)
-        {
-            //Remain in standart Pos
-        }
-        else
-        {
+        arrow00.transform.position = ballPos;
+
+        if (ball.isPressed) {
             Vector3 dir = ballPos - slingPos;
             dir = ball.currentSling.transform.InverseTransformDirection(dir);
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + 90;
