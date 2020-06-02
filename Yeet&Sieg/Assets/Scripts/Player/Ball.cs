@@ -92,11 +92,11 @@ public class Ball : MonoBehaviour
     {
         yield return new WaitUntil(hasReachedReleasePoint);
         currentSling.connectedBody = null;
+        GetComponent<ShootIndicator>().DestroyArrows();
 
         yield return new WaitForSeconds(slingcooldown);
         isInSling = false;
         isScoredAlready = false;
-        GetComponent<ShootIndicator>().DestroyArrows();
     }
 
     private bool hasReachedReleasePoint()

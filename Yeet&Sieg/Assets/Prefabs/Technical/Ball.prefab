@@ -174,5 +174,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1595402ebcc084cb2d4239eb2d0249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tolerance: 0
+  tolerance: 0.3
   arrows: {fileID: 8991994088450797597, guid: fdffcfd472af76f44834fcb341653f51, type: 3}

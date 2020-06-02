@@ -25,9 +25,9 @@ public class ShootIndicator : MonoBehaviour
     private void Update()
     {
 
-        if (ball.isInSling && currentArrows == null)
+        if (ball.isInSling && ball.currentSling.connectedBody != null && currentArrows == null)
             CreateArrows();
-        else if (ball.isInSling)
+        else if (ball.isInSling && currentArrows != null)
         {
             slingPos = ball.currentSling.transform.position;
             ballPos = ball.transform.position;
@@ -56,9 +56,9 @@ public class ShootIndicator : MonoBehaviour
 
     private void MoveArrows()
     {
-        if (Vector3.Distance(slingPos,ballPos) <= tolerance || !ball.isPressed)
+        if (Vector3.Distance(slingPos,ballPos) <= tolerance)
         {
-            //Remain in standart Position
+            //Remain in standart Pos
         }
         else
         {
