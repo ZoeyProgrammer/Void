@@ -11,7 +11,7 @@ public class LevelGenerator : MonoBehaviour
 
     private List<DifficultyClass> dcList = new List<DifficultyClass>();
     public HeightClass[] hcList = new HeightClass[21];
-    [SerializeField]private float currentGenHeight = 0;
+    private float currentGenHeight = 0;
     public float preGenerationLimit;
 
     private void Awake()
@@ -34,7 +34,7 @@ public class LevelGenerator : MonoBehaviour
 
     private void Update()
     {
-        if (currentGenHeight <= gm.height + preGenerationLimit)
+        if (currentGenHeight <= gm.currHeight + preGenerationLimit)
         {
             GenerateSnippit();
         }

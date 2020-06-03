@@ -543,6 +543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 530033849}
   - component: {fileID: 530033848}
+  - component: {fileID: 530033850}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -607,7 +608,6 @@ MonoBehaviour:
     maxHeight: 9000
   - minHeight: 7000
     maxHeight: 20000
-  currentGenHeight: 0
   preGenerationLimit: 5
 --- !u!4 &530033849
 Transform:
@@ -623,6 +623,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &530033850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530033847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b56e330b0437d4ca3b9101ad8c9e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waystone: {fileID: 3125467183823840787, guid: ea7a1a6189167bc4e892d4134c251bfa,
+    type: 3}
+  unitsBetweenWaystones: 50
 --- !u!224 &1156905166 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2837322987501850602, guid: cac3e768d17cc464eb31e30dace43e9a,

@@ -30,6 +30,8 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
+        gm.currHeight = transform.position.y / 10;
+
         if (isInSling && !isScoredAlready && transform.position.y / 10 > gm.height)
         {
             gm.height = transform.position.y / 10;
