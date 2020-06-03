@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 273843564965914806}
   - component: {fileID: 3620527668406217648}
   - component: {fileID: 344493139346308514}
+  - component: {fileID: 1803336448026718783}
+  - component: {fileID: 8836758034731541397}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -46,8 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timesBounced: 0
+  highScore: 0
   score: 0
   height: 0
+  currHeight: 0
+  musicVolume: 0
+  soundVolume: 0
 --- !u!114 &3620527668406217648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,3 +88,27 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!114 &1803336448026718783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273843564965914807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ae1c4e82270a24e83ca662a494822e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8836758034731541397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273843564965914807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4a9a0707eb53344b9c35e179ebc479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

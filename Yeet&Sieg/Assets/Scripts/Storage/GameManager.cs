@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int timesBounced;
-    public int score;
-    public float height;
+    public int timesBounced;    //Gets Updated after every Bounce
+    public int highScore;       //Gets Updated after Death
+    public int score;           //Gets Calculated all the time
+    public float height;        //Gets Updated everytime the ball enters a Sling
+    public float currHeight;    //Gets Updated all the time
 
     public float musicVolume;
     public float soundVolume;

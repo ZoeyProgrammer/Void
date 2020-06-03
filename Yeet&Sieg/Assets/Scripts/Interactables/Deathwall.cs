@@ -27,4 +27,12 @@ public class Deathwall : MonoBehaviour
             transform.position = new Vector3(transform.position.x, ball.transform.position.y - maxDistance, transform.position.z);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == Tags.ball)
+        {
+            col.GetComponent<Ball>().Death();
+        }
+    }
 }

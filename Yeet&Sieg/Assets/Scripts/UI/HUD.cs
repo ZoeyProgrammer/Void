@@ -18,6 +18,6 @@ public class HUD : MonoBehaviour
     private void Update()
     {
         bounceCounter.text = "Times Bounced: " + gm.timesBounced;
-        scoreCounter.text = "Score: " + Mathf.RoundToInt(gm.height);
+        scoreCounter.text = "Height: " + Mathf.RoundToInt(gm.height);
     }
 }

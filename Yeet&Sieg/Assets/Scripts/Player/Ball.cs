@@ -30,6 +30,8 @@ public class Ball : MonoBehaviour
 
     private void Update()
     {
+        gm.currHeight = transform.position.y / 10;
+
         if (isInSling && !isScoredAlready && transform.position.y / 10 > gm.height)
         {
             gm.height = transform.position.y / 10;
@@ -106,6 +108,11 @@ public class Ball : MonoBehaviour
             return true;
 
             return false;
+    }
+
+    public void Death()
+    {
+        FindObjectOfType<DeathscreenController>().OpenDeathscreen();
     }
 
     private void OnMouseDown()
