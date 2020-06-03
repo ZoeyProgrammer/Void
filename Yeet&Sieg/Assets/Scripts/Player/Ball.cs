@@ -110,6 +110,11 @@ public class Ball : MonoBehaviour
             return false;
     }
 
+    public void Death()
+    {
+        FindObjectOfType<DeathscreenController>().OpenDeathscreen();
+    }
+
     private void OnMouseDown()
     {
         isPressed = true;
