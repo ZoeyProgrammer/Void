@@ -60,7 +60,7 @@ public class LevelEditor : EditorWindow
                 AddPrefabToList();
             }
             else
-                Debug.Log("Prefab Creation ERROR");
+                Debug.LogError("Prefab Creation ERROR");
         }
         if (GUILayout.Button("Load Snippet"))
         {
@@ -70,7 +70,7 @@ public class LevelEditor : EditorWindow
                 LoadPrefab();
             }
             else
-                Debug.Log("The Prefab " + snippetName + " could not be found.");
+                Debug.LogError("The Prefab " + snippetName + " could not be found.");
         }
     }
 
@@ -112,7 +112,7 @@ public class LevelEditor : EditorWindow
             if (snippetList.snippetList.Contains(prefab))
                 Debug.Log("Prefab was successfully added to SnippetList");
             else
-                Debug.Log("ERROR 8008: Prefab was NOT Successfully added to SnippetList");
+                Debug.LogError("ERROR 8008: Prefab was NOT Successfully added to SnippetList");
         }
         else
             Debug.Log("Prefab successfully Overwritten!");
