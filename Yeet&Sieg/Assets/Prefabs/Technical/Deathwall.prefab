@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  maxDistance: 40
+  maxDistance: 60
 --- !u!50 &453574052249711982
 Rigidbody2D:
   serializedVersion: 4
