@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public float yOffset;
     private GameObject ball;
 
     private void Start()
@@ -14,6 +15,6 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         if (!ball.GetComponent<Ball>().isInSling)
-            transform.position = new Vector3(transform.position.x, ball.transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, ball.transform.position.y + yOffset, transform.position.z);
     }
 }
