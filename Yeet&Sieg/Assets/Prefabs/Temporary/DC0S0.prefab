@@ -62,11 +62,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sling (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3546220485166133749, guid: 1f5bf16d174728546a2f5ec89023b4e3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 3546220485166133751, guid: 1f5bf16d174728546a2f5ec89023b4e3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -141,11 +136,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sling (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546220485166133749, guid: 1f5bf16d174728546a2f5ec89023b4e3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3546220485166133751, guid: 1f5bf16d174728546a2f5ec89023b4e3,
         type: 3}
@@ -222,11 +212,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sling (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 3546220485166133749, guid: 1f5bf16d174728546a2f5ec89023b4e3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 3546220485166133751, guid: 1f5bf16d174728546a2f5ec89023b4e3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -302,11 +287,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sling (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 3546220485166133749, guid: 1f5bf16d174728546a2f5ec89023b4e3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 3546220485166133751, guid: 1f5bf16d174728546a2f5ec89023b4e3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -381,11 +361,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sling (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546220485166133749, guid: 1f5bf16d174728546a2f5ec89023b4e3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3546220485166133751, guid: 1f5bf16d174728546a2f5ec89023b4e3,
         type: 3}

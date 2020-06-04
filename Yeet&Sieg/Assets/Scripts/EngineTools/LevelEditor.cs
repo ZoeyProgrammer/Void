@@ -62,6 +62,16 @@ public class LevelEditor : EditorWindow
             else
                 Debug.Log("Prefab Creation ERROR");
         }
+        if (GUILayout.Button("Load Snippet"))
+        {
+            if (AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Temporary/" + snippetName + ".prefab") != null)
+            {
+                ClearScene();
+                LoadPrefab();
+            }
+            else
+                Debug.Log("The Prefab " + snippetName + " could not be found.");
+        }
     }
 
     private void ResetWalls()
@@ -77,9 +87,10 @@ public class LevelEditor : EditorWindow
 
     private void ClearScene()
     {
-        foreach (GameObject wall in GameObject.FindGameObjectsWithTag(Tags.obstacle)) {
-            DestroyImmediate(wall);
+        foreach (GameObject obstacle in GameObject.FindGameObjectsWithTag(Tags.obstacle)) {
+            DestroyImmediate(obstacle);
         }
+        Debug.Log("Scene cleared");
     }
 
     private bool CreatePrefab()
@@ -96,10 +107,40 @@ public class LevelEditor : EditorWindow
         GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Temporary/" + snippetName + ".prefab");
         SnippetList snippetList = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Temporary/SnippetList.prefab").GetComponent<SnippetList>();
         if (!snippetList.snippetList.Contains(prefab))
+        {
             snippetList.snippetList.Add(prefab);
+            if (snippetList.snippetList.Contains(prefab))
+                Debug.Log("Prefab was successfully added to SnippetList");
+            else
+                Debug.Log("ERROR 8008: Prefab was NOT Successfully added to SnippetList");
+        }
         else
-            Debug.Log("That Prefab was already Comitted!");
+            Debug.Log("Prefab successfully Overwritten!");
     }
+
+    private void LoadPrefab()
+    {
+        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Temporary/" + snippetName + ".prefab");
+        snippetLength = prefab.GetComponent<Snippet>().snippetLength;
+        difficultyClass = prefab.GetComponent<Snippet>().difficultyClass;
+        GameObject snippet = GameObject.FindGameObjectWithTag(Tags.snippet);
+
+        Object currentPrefabObj = PrefabUtility.InstantiatePrefab(prefab as GameObject);
+        GameObject currentPrefab = currentPrefabObj as GameObject;
+
+        PrefabUtility.UnpackPrefabInstance(currentPrefab, PrefabUnpackMode.OutermostRoot,InteractionMode.UserAction);
+
+        Transform[] list = currentPrefab.gameObject.GetComponentsInChildren<Transform>();
+        foreach(Transform t in list)
+        {
+            if (t != currentPrefab.transform)
+                t.SetParent(snippet.transform);
+        }
+        DestroyImmediate(currentPrefab);
+
+        Debug.Log("Prefab " + snippetName + " loaded");
+    }
+
 
     private void OnInspectorUpdate()
     {
