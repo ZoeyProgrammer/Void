@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e39ba2649728fa47b1d7bd545ba140c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  username: User
   timesBounced: 0
   highScore: 0
   score: 0
