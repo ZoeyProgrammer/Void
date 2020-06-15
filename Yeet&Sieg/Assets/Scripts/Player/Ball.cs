@@ -90,7 +90,7 @@ public class Ball : MonoBehaviour
         }
     }
     
-    IEnumerator Release()
+    public IEnumerator Release()
     {
         yield return new WaitUntil(hasReachedReleasePoint);
         currentSling.connectedBody = null;
@@ -115,7 +115,7 @@ public class Ball : MonoBehaviour
         FindObjectOfType<DeathscreenController>().OpenDeathscreen();
     }
 
-    private void OnMouseDown()
+    /*private void OnMouseDown()
     {
         isPressed = true;
         if (isInSling)
@@ -130,7 +130,7 @@ public class Ball : MonoBehaviour
             rb.isKinematic = false;
             StartCoroutine(Release());
         }
-    }
+    }*/
 
     private void OnTriggerEnter2D(Collider2D col)
     {
