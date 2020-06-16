@@ -98,7 +98,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 8
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   releaseDistance: 1
-  slingcooldown: 0.2
-  maxVelocity: 45
+  slingcooldown: 0.1
+  maxVelocity: 55
   maxDragDistance: 7
   bounceCountDelay: 0
   wallLayers:

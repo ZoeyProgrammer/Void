@@ -474,6 +474,16 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 1.723398
       objectReference: {fileID: 0}
+    - target: {fileID: 326613485345734619, guid: 70b756e09506fe34b90d532feb3c1236,
+        type: 3}
+      propertyPath: m_Mass
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 326613485345734619, guid: 70b756e09506fe34b90d532feb3c1236,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5796654943895995301, guid: 70b756e09506fe34b90d532feb3c1236,
         type: 3}
       propertyPath: tolerance
@@ -482,7 +492,12 @@ PrefabInstance:
     - target: {fileID: 6427272803156390946, guid: 70b756e09506fe34b90d532feb3c1236,
         type: 3}
       propertyPath: maxVelocity
-      value: 45
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427272803156390946, guid: 70b756e09506fe34b90d532feb3c1236,
+        type: 3}
+      propertyPath: slingcooldown
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b756e09506fe34b90d532feb3c1236, type: 3}
