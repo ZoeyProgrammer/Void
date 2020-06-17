@@ -1,7 +1,160 @@
 fileFormatVersion: 2
 guid: 1bc00e402d532824e8bb0b2517c10f17
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1823117621102999338
+    second: FireAnim01_0
+  - first:
+      213: 6866286953504419211
+    second: FireAnim01_1
+  - first:
+      213: -2853294899906029834
+    second: FireAnim01_2
+  - first:
+      213: 3132594462931733510
+    second: FireAnim01_3
+  - first:
+      213: -2261348802911670962
+    second: FireAnim01_4
+  - first:
+      213: 3751437324072664390
+    second: FireAnim01_5
+  - first:
+      213: 6490755844288245554
+    second: FireAnim01_6
+  - first:
+      213: -2737718255101406225
+    second: FireAnim01_7
+  - first:
+      213: 3884722375181475474
+    second: FireAnim01_8
+  - first:
+      213: -2483542665875191026
+    second: FireAnim01_9
+  - first:
+      213: -8852113156028220378
+    second: FireAnim01_10
+  - first:
+      213: 4861234912603753231
+    second: FireAnim01_11
+  - first:
+      213: 4343385862516415300
+    second: FireAnim01_12
+  - first:
+      213: -4682197626444895355
+    second: FireAnim01_13
+  - first:
+      213: -3132918394895601218
+    second: FireAnim01_14
+  - first:
+      213: 5081289279463050077
+    second: FireAnim01_15
+  - first:
+      213: 1383940938561915411
+    second: FireAnim01_16
+  - first:
+      213: 3723846535649550447
+    second: FireAnim01_17
+  - first:
+      213: 927583709824234160
+    second: FireAnim01_18
+  - first:
+      213: 5494168136144117427
+    second: FireAnim01_19
+  - first:
+      213: 9094255141981271202
+    second: FireAnim01_20
+  - first:
+      213: 1245872245972264385
+    second: FireAnim01_21
+  - first:
+      213: 2870342712070611946
+    second: FireAnim01_22
+  - first:
+      213: 5243644587799346817
+    second: FireAnim01_23
+  - first:
+      213: 1215137142982613003
+    second: FireAnim01_24
+  - first:
+      213: 7329371277810962049
+    second: FireAnim01_25
+  - first:
+      213: -1807183382786141840
+    second: FireAnim01_26
+  - first:
+      213: -5968669169026999484
+    second: FireAnim01_27
+  - first:
+      213: 8530520042792180214
+    second: FireAnim01_28
+  - first:
+      213: -446855608730711049
+    second: FireAnim01_29
+  - first:
+      213: 1117639705201436222
+    second: FireAnim01_30
+  - first:
+      213: -8030290339207239500
+    second: FireAnim01_31
+  - first:
+      213: -6793846584828271787
+    second: FireAnim01_32
+  - first:
+      213: -2156620493995603271
+    second: FireAnim01_33
+  - first:
+      213: 8467802618396589752
+    second: FireAnim01_34
+  - first:
+      213: 442224469714365401
+    second: FireAnim01_35
+  - first:
+      213: -350299369167132645
+    second: FireAnim01_36
+  - first:
+      213: 8284949996105621089
+    second: FireAnim01_37
+  - first:
+      213: 333155315477433222
+    second: FireAnim01_38
+  - first:
+      213: 5501541223941643408
+    second: FireAnim01_39
+  - first:
+      213: -6752261530932107234
+    second: FireAnim01_40
+  - first:
+      213: 1294750523756361995
+    second: FireAnim01_41
+  - first:
+      213: 7788612656350078450
+    second: FireAnim01_42
+  - first:
+      213: 8710811735784709331
+    second: FireAnim01_43
+  - first:
+      213: -131832931125731032
+    second: FireAnim01_44
+  - first:
+      213: 174253282353280970
+    second: FireAnim01_45
+  - first:
+      213: -6561941656295164126
+    second: FireAnim01_46
+  - first:
+      213: 6515417076433578452
+    second: FireAnim01_47
+  - first:
+      213: 2991749881072521722
+    second: FireAnim01_48
+  - first:
+      213: -3918111167233804534
+    second: FireAnim01_49
+  - first:
+      213: -1617033544811716706
+    second: FireAnim01_50
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +193,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +274,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: FireAnim01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 254
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27799d21d30d4910800000000000000
+      internalID: 1823117621102999338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireAnim01_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 245
+        width: 256
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8da785ea93f94f50800000000000000
+      internalID: 6866286953504419211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireAnim01_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6daabe76f0768d0800000000000000
+      internalID: -2853294899906029834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireAnim01_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60cc66c1116397b20800000000000000
+      internalID: 3132594462931733510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
