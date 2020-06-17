@@ -7,11 +7,42 @@ using TMPro;
 public class Scoreboard : MonoBehaviour
 {
     public ScrollRect scrollRect;
+    public GameObject scoreSegment;
+    public Transform scoreContent;
+
     GameManager gm;
+    DBManager db;
 
     private void Awake()
     {
         gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
+        db = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<DBManager>();
+    }
+
+    private void Start()
+    {
+        LoadPlayerScore();
+        StartCoroutine(LoadSegments());
+    }
+
+    private void LoadPlayerScore()
+    {
+        GameObject segment = Instantiate(scoreSegment, scoreContent);
+        segment.GetComponent<ScoreSegments>().username = gm.username;
+        segment.GetComponent<ScoreSegments>().highscore = gm.highscore;
+    }
+
+    private IEnumerator LoadSegments()
+    {
+        var highscoreListTask = db.HighscoreList();
+        yield return new WaitUntil(() => highscoreListTask.IsCompleted);
+        foreach (ScoreSave save in highscoreListTask.Result)
+        {
+            Debug.Log(save.username + " " + save.highscore);
+            GameObject segment = Instantiate(scoreSegment,scoreContent);
+            segment.GetComponent<ScoreSegments>().username = save.username;
+            segment.GetComponent<ScoreSegments>().highscore = save.highscore;
+        }
     }
 
     public void JumpToTop()

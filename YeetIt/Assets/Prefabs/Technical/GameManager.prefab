@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 344493139346308514}
   - component: {fileID: 1803336448026718783}
   - component: {fileID: 8836758034731541397}
+  - component: {fileID: 1312354259151309406}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -48,8 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   username: User
+  friendList:
+  - Klaus
+  - Gunther
+  - Hans
   timesBounced: 0
-  highScore: 0
+  highscore: 0
   score: 0
   height: 0
   currHeight: 0
@@ -111,5 +116,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a4a9a0707eb53344b9c35e179ebc479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1312354259151309406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273843564965914807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e574a00b8591e164cbbab08e4e7478bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

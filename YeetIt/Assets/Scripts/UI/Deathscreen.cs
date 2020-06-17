@@ -13,18 +13,19 @@ public class Deathscreen : MonoBehaviour
 
     DeathscreenController menu;
     GameManager gm;
+    DBManager db;
 
     private void Start()
     {
         menu = FindObjectOfType<DeathscreenController>();
         gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
+        db = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<DBManager>();
 
-        gm.score = Mathf.RoundToInt(gm.height);//For now, until there is proper score calculation
-
-        if (gm.score >= gm.highScore)
+        if (gm.score >= gm.highscore)
         {
             isNewHighscore = true;
-            gm.highScore = gm.score;
+            gm.highscore = gm.score;
+            db.SaveHighscore();
         }
         else
             isNewHighscore = false;
