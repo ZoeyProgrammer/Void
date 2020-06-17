@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: de69b048b024e854db0fe9d2476e6ec8, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -349,7 +349,7 @@ Transform:
   m_LocalScale: {x: 1, y: 200, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &241548036
 BoxCollider2D:
@@ -1118,7 +1118,7 @@ Transform:
   m_LocalScale: {x: 1, y: 200, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1763126786
 PrefabInstance:
@@ -1351,6 +1351,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7870418000337184008, guid: 53a3568b40ef4c64cbc504493941f688,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7870418000337184010, guid: 53a3568b40ef4c64cbc504493941f688,
         type: 3}
       propertyPath: m_Name
@@ -1394,7 +1399,7 @@ PrefabInstance:
     - target: {fileID: 7870418000337184055, guid: 53a3568b40ef4c64cbc504493941f688,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7870418000337184055, guid: 53a3568b40ef4c64cbc504493941f688,
         type: 3}
