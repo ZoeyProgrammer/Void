@@ -789,15 +789,15 @@ MonoBehaviour:
     type: 3}
   hcList:
   - minHeight: 0
-    maxHeight: 100
+    maxHeight: 30
   - minHeight: 101
-    maxHeight: 200
-  - minHeight: 201
-    maxHeight: 300
-  - minHeight: 301
-    maxHeight: 400
-  - minHeight: 401
     maxHeight: 500
+  - minHeight: 501
+    maxHeight: 502
+  - minHeight: 502
+    maxHeight: 501
+  - minHeight: 501
+    maxHeight: 502
   - minHeight: 501
     maxHeight: 600
   - minHeight: 601
@@ -953,6 +953,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Deathwall
+      objectReference: {fileID: 0}
+    - target: {fileID: 453574052249711979, guid: 540ea8857ab3b2249b19707920f590b8,
+        type: 3}
+      propertyPath: maxDistance
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 540ea8857ab3b2249b19707920f590b8, type: 3}
