@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1803336448026718783}
   - component: {fileID: 8836758034731541397}
   - component: {fileID: 1312354259151309406}
+  - component: {fileID: 5604614154027247729}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -49,10 +50,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   username: User
+  userID: 
   friendList:
-  - Klaus
+  - f15q0amasUVHZf8exLAV8NQCoPJ2
   - Gunther
   - Hans
+  - Klaus
+  - 1
+  - 2
+  - 3
   timesBounced: 0
   highscore: 0
   score: 0
@@ -130,3 +136,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e574a00b8591e164cbbab08e4e7478bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5604614154027247729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273843564965914807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4080fed96fa4d6a48a5f6ba813dda6b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnFirebaseInitialized:
+    m_PersistentCalls:
+      m_Calls: []

@@ -19,7 +19,7 @@ public class DBManager : MonoBehaviour
 
     public string playerKey()
     {
-        return "users/" + gm.username;
+        return "users/" + gm.userID;
     }
 
     public void SaveHighscore()
@@ -27,16 +27,24 @@ public class DBManager : MonoBehaviour
         database.GetReference(playerKey() + "/highscore").SetValueAsync(gm.highscore);
     }
 
+    public async void RetrieveHighscore()
+    {
+        DataSnapshot score = await database.GetReference(playerKey() + "/highscore").GetValueAsync();
+        gm.highscore = int.Parse(score.Value.ToString());
+    }
+
     public async Task<List<ScoreSave>> HighscoreList()
     {
         Debug.Log("Fetching Highscore data..");
         List<ScoreSave> allSegments = new List<ScoreSave>();
-        foreach (string friend in gm.friendList)
+        foreach (string friendID in gm.friendList)
         {
-            DataSnapshot friendScore = await database.GetReference("users/" + friend + "/highscore").GetValueAsync();
+            DataSnapshot friendScore = await database.GetReference("users/" + friendID + "/highscore").GetValueAsync();
             if (friendScore.Exists)
             {
-                allSegments.Add(new ScoreSave(friend, int.Parse(friendScore.Value.ToString())));
+                DataSnapshot friendName = await database.GetReference("users/" + friendID + "/name").GetValueAsync();
+                if (friendName.Exists)
+                    allSegments.Add(new ScoreSave(friendName.Value.ToString() , int.Parse(friendScore.Value.ToString())));
             }
         }
         return allSegments;

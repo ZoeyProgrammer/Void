@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,7 +29,7 @@ public class Scoreboard : MonoBehaviour
     private void LoadPlayerScore()
     {
         GameObject segment = Instantiate(scoreSegment, scoreContent);
-        segment.GetComponent<ScoreSegments>().username = gm.username;
+        segment.GetComponent<ScoreSegments>().username = "You";
         segment.GetComponent<ScoreSegments>().highscore = gm.highscore;
     }
 
@@ -43,6 +44,7 @@ public class Scoreboard : MonoBehaviour
             segment.GetComponent<ScoreSegments>().username = save.username;
             segment.GetComponent<ScoreSegments>().highscore = save.highscore;
         }
+        SortSegments();
     }
 
     public void JumpToTop()
@@ -57,7 +59,7 @@ public class Scoreboard : MonoBehaviour
 
         foreach (ScoreSegments s in FindObjectsOfType<ScoreSegments>())
         {
-            if (s.username == gm.username)
+            if (s.username == "You")
                 segment = s.gameObject;
         }
 
@@ -66,6 +68,17 @@ public class Scoreboard : MonoBehaviour
         else
             scrollRect.ScrollToSegment(segment.GetComponent<RectTransform>());
         //Jump to your own Score
+    }
+
+    public void SortSegments()
+    {
+        ScoreSegments[] segmentList = FindObjectsOfType<ScoreSegments>();
+        ScoreSegments[] segmentsOrdered = segmentList.OrderByDescending(x => x.highscore).ToArray();
+        
+        for (int i = 0; i < segmentsOrdered.Length; i++)
+        {
+            segmentsOrdered[i].transform.SetSiblingIndex(i);
+        }
     }
 
     public void CloseScoreboard()
