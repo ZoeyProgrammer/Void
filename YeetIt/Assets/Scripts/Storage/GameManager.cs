@@ -16,4 +16,6 @@ public class GameManager : MonoBehaviour
 
     public float musicVolume;
     public float soundVolume;
+
+    public bool goToScore;  //For Menu Switching (Yes, I know this is the lazy way..)
 }

@@ -20,9 +20,18 @@ public class MenuController : MonoBehaviour
     private bool scoreboardMenuActive;
     private bool skinsMenuActive;
 
+    GameManager gm;
+
     private void Start()
     {
-        OpenMainMenu();
+        gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
+        if (gm.goToScore)
+        {
+            OpenScoreboard();
+            gm.goToScore = false;
+        }
+        else
+            OpenMainMenu();
     }
 
     private void Update()

@@ -6,8 +6,16 @@ using UnityEngine.SceneManagement;
 public class DeathscreenController : MonoBehaviour
 {
     public GameObject deathscreen;
+    public GameObject scorescreen;
 
     private GameObject currentDeathscreen;
+
+    GameManager gm;
+
+    private void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
+    }
 
     public void OpenDeathscreen()
     {
@@ -20,9 +28,9 @@ public class DeathscreenController : MonoBehaviour
 
     public void Score()
     {
-        //Time.timeScale = 1;
-        //Open the Score Scene
-        Debug.Log("Not yet Implemented");
+        Time.timeScale = 1;
+        gm.goToScore = true;
+        SceneManager.LoadSceneAsync("MainMenu");
     }
 
     public void Share()
