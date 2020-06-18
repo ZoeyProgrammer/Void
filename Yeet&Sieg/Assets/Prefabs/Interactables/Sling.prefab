@@ -5014,6 +5014,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireAnim01_0
       objectReference: {fileID: 0}
+    - target: {fileID: 3953635563804577133, guid: 3a56efd2fde583a41aa017719e71c518,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953635563804577133, guid: 3a56efd2fde583a41aa017719e71c518,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.69297177
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953635563804577133, guid: 3a56efd2fde583a41aa017719e71c518,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4009434
+      objectReference: {fileID: 0}
     - target: {fileID: 8851589582271858278, guid: 3a56efd2fde583a41aa017719e71c518,
         type: 3}
       propertyPath: m_LocalPosition.x
