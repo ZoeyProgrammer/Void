@@ -1918,6 +1918,12 @@ PrefabInstance:
       propertyPath: priority
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8910528533616255478, guid: 5fa5f0a4b2fb953408d6a978a7f5e39e,
+        type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 90917bc60fff45d42b4f90c7d1fb9a99,
+        type: 2}
     - target: {fileID: 8910528533616255479, guid: 5fa5f0a4b2fb953408d6a978a7f5e39e,
         type: 3}
       propertyPath: m_LocalPosition.x
