@@ -20,12 +20,14 @@ public class Ball : MonoBehaviour
 
     Rigidbody2D rb;
     GameManager gm;
+    AudioManager audioMng;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
         radius = GetComponent<CircleCollider2D>().radius * 0.5f;
+        audioMng = GameObject.FindGameObjectWithTag(Tags.audioManager).GetComponent<AudioManager>();
     }
 
     private void Update()
@@ -115,29 +117,13 @@ public class Ball : MonoBehaviour
         FindObjectOfType<DeathscreenController>().OpenDeathscreen();
     }
 
-    /*private void OnMouseDown()
-    {
-        isPressed = true;
-        if (isInSling)
-            rb.isKinematic = true;
-    }
-
-    private void OnMouseUp()
-    {
-        isPressed = false;
-        if (isInSling)
-        {
-            rb.isKinematic = false;
-            StartCoroutine(Release());
-        }
-    }*/
-
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (!isInSling && col.tag == Tags.obstacle && bounceDelayCounter <= 0)
         {
             bounceDelayCounter = bounceCountDelay;
             gm.timesBounced++;
+            audioMng.PlayCollisonSound();
         }
         else
             bounceDelayCounter -= Time.deltaTime;

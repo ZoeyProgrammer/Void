@@ -9,4 +9,5 @@ public class Tags : MonoBehaviour
     public const string obstacle = "Obstacle";
     public const string levelEditWall = "LevelEditorWall";
     public const string snippet = "Snippet";
+    public const string audioManager = "AudioManager";
 }

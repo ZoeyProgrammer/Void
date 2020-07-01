@@ -20,6 +20,7 @@ public class MoveabiltyAdder : Editor
                 GameObject key = Instantiate(keyframe, obj.transform.position, Quaternion.identity);
 
                 obj.GetComponent<Moveability>().keyframes.Add(key.transform);
+                obj.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
             }
         }
         else
