@@ -5,6 +5,12 @@ using UnityEngine;
 public class Bouncepad : MonoBehaviour
 {
     public float impulsePower;
+    AudioManager audioMng;
+
+    private void Start()
+    {
+        audioMng = GameObject.FindGameObjectWithTag(Tags.audioManager).GetComponent<AudioManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -12,6 +18,7 @@ public class Bouncepad : MonoBehaviour
         {
             col.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             col.GetComponent<Rigidbody2D>().AddForce(transform.up * impulsePower, ForceMode2D.Impulse);
+            audioMng.PlayBouncepadSound();
         }
     }
 }
