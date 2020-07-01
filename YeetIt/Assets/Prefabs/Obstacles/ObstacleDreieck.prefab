@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 123365863319884224}
   - component: {fileID: 123365863319884227}
   - component: {fileID: 8268483130591122415}
+  - component: {fileID: 1213238830199917029}
   m_Layer: 0
   m_Name: ObstacleDreieck
   m_TagString: Obstacle
@@ -102,3 +103,15 @@ EdgeCollider2D:
   - {x: -2.9154313, y: -2.90724}
   - {x: 2.9942627, y: -2.9160004}
   - {x: -2.9326792, y: 2.9838161}
+--- !u!114 &1213238830199917029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123365863319884229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6863e76038b9094483828c6095f20d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
