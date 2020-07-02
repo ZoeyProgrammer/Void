@@ -11,6 +11,7 @@ public class Moveability : MonoBehaviour
     private Transform currentTarget;
     private float distance;
     private float degrees;
+    private float currentRotationSpeed;
 
     void Update()
     {
@@ -19,6 +20,10 @@ public class Moveability : MonoBehaviour
 
     public void Move()
     {
+        if(currentTarget == null)
+        {
+            setNewTargets();
+        }
         if (transform.position == keyframes[currentKeyframe].position)
         {
             if (currentKeyframe < keyframes.Count - 1)
@@ -26,28 +31,32 @@ public class Moveability : MonoBehaviour
             else
                 currentKeyframe = 0;
 
-            currentTarget = keyframes[currentKeyframe];
-            distance = Vector3.Distance(transform.position, currentTarget.position);
-
-            float myDegree = transform.rotation.eulerAngles.z;
-            float targetDegree = currentTarget.rotation.eulerAngles.z;
-
-            if (myDegree > 180)
-                myDegree -= 180;
-            else if (myDegree < -180)
-                myDegree += 180;
-
-            if (targetDegree > 180)
-                targetDegree -= 180;
-            else if (targetDegree < -180)
-                targetDegree += 180;
-
-            degrees = myDegree - targetDegree;
-            Debug.Log(myDegree + "-" + targetDegree + " = " + degrees);
+            setNewTargets();
         }
         transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, Time.deltaTime * speed);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, currentTarget.rotation, Time.deltaTime * Mathf.Abs(currentRotationSpeed));
+    }
 
-        float rotationSpeed = degrees / (distance / speed);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, currentTarget.rotation, Time.deltaTime * Mathf.Abs(rotationSpeed));
+    private void setNewTargets()
+    {
+        currentTarget = keyframes[currentKeyframe];
+        distance = Vector3.Distance(transform.position, currentTarget.position);
+
+        float myDegree = transform.rotation.eulerAngles.z;
+        float targetDegree = currentTarget.rotation.eulerAngles.z;
+
+        if (myDegree > 180)
+            myDegree -= 180;
+        else if (myDegree < -180)
+            myDegree += 180;
+
+        if (targetDegree > 180)
+            targetDegree -= 180;
+        else if (targetDegree < -180)
+            targetDegree += 180;
+
+        degrees = myDegree - targetDegree;
+
+        currentRotationSpeed = degrees / (distance / speed);
     }
 }
