@@ -14,6 +14,12 @@ public class PauseMenuController : MonoBehaviour
 
     private bool optionsMenuActive;
 
+    GameManager gm;
+
+    private void Start()
+    {
+        gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
+    }
 
     private void Update()
     {
@@ -55,6 +61,10 @@ public class PauseMenuController : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
+        gm.score = 0;
+        gm.timesBounced = 0;
+        gm.currHeight = 0;
+        gm.height = 0;
         SceneManager.LoadSceneAsync("GameScene");
     }
 

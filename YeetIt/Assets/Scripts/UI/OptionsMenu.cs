@@ -39,7 +39,7 @@ public class OptionsMenu : MonoBehaviour
 
     public void SoundSlider(float newValue)
     {
-        gm.musicVolume = newValue;
+        gm.soundVolume = newValue;
         masterMixer.SetFloat("soundVolume", newValue);
         float decibelToPercent = (newValue + 80) * 100 / 80;
         soundText.text = Mathf.RoundToInt(decibelToPercent) + "%";

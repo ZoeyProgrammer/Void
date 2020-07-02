@@ -28,10 +28,25 @@ public class Moveability : MonoBehaviour
 
             currentTarget = keyframes[currentKeyframe];
             distance = Vector3.Distance(transform.position, currentTarget.position);
-            degrees = transform.rotation.eulerAngles.z - currentTarget.rotation.eulerAngles.z;
-            Debug.Log(transform.rotation.eulerAngles.z + " - " + currentTarget.rotation.eulerAngles.z + " = " + degrees);
+
+            float myDegree = transform.rotation.eulerAngles.z;
+            float targetDegree = currentTarget.rotation.eulerAngles.z;
+
+            if (myDegree > 180)
+                myDegree -= 180;
+            else if (myDegree < -180)
+                myDegree += 180;
+
+            if (targetDegree > 180)
+                targetDegree -= 180;
+            else if (targetDegree < -180)
+                targetDegree += 180;
+
+            degrees = myDegree - targetDegree;
+            Debug.Log(myDegree + "-" + targetDegree + " = " + degrees);
         }
         transform.position = Vector3.MoveTowards(transform.position, currentTarget.position, Time.deltaTime * speed);
+
         float rotationSpeed = degrees / (distance / speed);
         transform.rotation = Quaternion.RotateTowards(transform.rotation, currentTarget.rotation, Time.deltaTime * Mathf.Abs(rotationSpeed));
     }

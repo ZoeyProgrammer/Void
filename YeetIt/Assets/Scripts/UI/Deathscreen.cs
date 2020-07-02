@@ -15,7 +15,7 @@ public class Deathscreen : MonoBehaviour
     GameManager gm;
     DBManager db;
 
-    private void Start()
+    private void Awake()
     {
         menu = FindObjectOfType<DeathscreenController>();
         gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
@@ -33,7 +33,10 @@ public class Deathscreen : MonoBehaviour
         shareButton.SetActive(isNewHighscore);
         scoreButton.SetActive(!isNewHighscore);
         score.text = "Score:" + gm.score.ToString();
+    }
 
+    private void ResetScore()
+    {
         gm.score = 0;
         gm.timesBounced = 0;
         gm.currHeight = 0;
@@ -42,21 +45,25 @@ public class Deathscreen : MonoBehaviour
 
     public void ShareButton()
     {
+        ResetScore();
         menu.Share();
     }
 
     public void ScoreButton()
     {
+        ResetScore();
         menu.Score();
     }
 
     public void RetryButton()
     {
+        ResetScore();
         menu.Retry();
     }
 
     public void BackToMenuButton()
     {
+        ResetScore();
         menu.BackToMenu();
     }
 }
