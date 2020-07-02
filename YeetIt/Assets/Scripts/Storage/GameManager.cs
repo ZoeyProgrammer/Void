@@ -18,4 +18,5 @@ public class GameManager : MonoBehaviour
     public float soundVolume;
 
     public bool goToScore;  //For Menu Switching (Yes, I know this is the lazy way..)
+    public bool isOnline;  //To check if Auth has worked
 }

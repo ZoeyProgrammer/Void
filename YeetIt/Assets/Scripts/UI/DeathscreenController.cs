@@ -22,6 +22,7 @@ public class DeathscreenController : MonoBehaviour
         if (currentDeathscreen == null)
         {
             currentDeathscreen = Instantiate(deathscreen, this.transform);
+            currentDeathscreen.GetComponent<Deathscreen>().UpdateScore();
             Time.timeScale = 0;
         }
     }

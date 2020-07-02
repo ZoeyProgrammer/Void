@@ -39,11 +39,13 @@ public class FirebaseInit : MonoBehaviour
             if (task.IsFaulted)
             {
                 Debug.LogError($"Failed to log in Anonymously with {task.Exception}");
+                gm.isOnline = false;
                 return;
             }
 
             FirebaseUser newUser = task.Result;
             Debug.Log($"User signed in successfully: {newUser.DisplayName} ({newUser.UserId})");
+            gm.isOnline = true;
             gm.userID = newUser.UserId;
 
             db.RetrieveHighscore();

@@ -20,19 +20,26 @@ public class Deathscreen : MonoBehaviour
         menu = FindObjectOfType<DeathscreenController>();
         gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
         db = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<DBManager>();
+    }
 
+    public void UpdateScore()
+    {
         if (gm.score >= gm.highscore)
         {
             isNewHighscore = true;
             gm.highscore = gm.score;
-            db.SaveHighscore();
+            if(gm.isOnline)
+                db.SaveHighscore();
+            score.text = "New High-Score:" + gm.score.ToString();
         }
         else
+        {
             isNewHighscore = false;
+            score.text = "Score:" + gm.score.ToString();
+        }
 
         shareButton.SetActive(isNewHighscore);
         scoreButton.SetActive(!isNewHighscore);
-        score.text = "Score:" + gm.score.ToString();
     }
 
     private void ResetScore()
