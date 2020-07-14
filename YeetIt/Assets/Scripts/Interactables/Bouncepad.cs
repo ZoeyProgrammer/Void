@@ -16,9 +16,12 @@ public class Bouncepad : MonoBehaviour
     {
         if (col.tag == Tags.ball)
         {
-            col.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-            col.GetComponent<Rigidbody2D>().AddForce(transform.up * impulsePower, ForceMode2D.Impulse);
-            audioMng.PlayBouncepadSound();
+            if (col.GetComponent<Ball>().isInSling)
+            {
+                col.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                col.GetComponent<Rigidbody2D>().AddForce(transform.up * impulsePower, ForceMode2D.Impulse);
+                audioMng.PlayBouncepadSound();
+            }
         }
     }
 }

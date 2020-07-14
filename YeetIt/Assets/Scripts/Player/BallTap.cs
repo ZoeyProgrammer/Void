@@ -23,9 +23,10 @@ public class BallTap : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         ball.isPressed = false;
-        if (ball.isInSling)
+        ball.GetComponent<Rigidbody2D>().isKinematic = false;
+
+        if (ball.isInSling && ball.isDragged)
         {
-            ball.GetComponent<Rigidbody2D>().isKinematic = false;
             StartCoroutine(ball.Release());
         }
     }

@@ -135,10 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef44310d899aea4fafac17eea91608c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  releaseDistance: 1
+  releaseDistance: 1.5
   slingcooldown: 0.1
   maxVelocity: 55
   maxDragDistance: 7
+  minDragDistance: 1.5
   bounceCountDelay: 0
   wallLayers:
     serializedVersion: 2
@@ -146,6 +147,7 @@ MonoBehaviour:
   isInSling: 0
   currentSling: {fileID: 0}
   isPressed: 0
+  isDragged: 0
 --- !u!58 &122884331871913248
 CircleCollider2D:
   m_ObjectHideFlags: 0

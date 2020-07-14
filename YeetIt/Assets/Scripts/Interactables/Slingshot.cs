@@ -19,6 +19,8 @@ public class Slingshot : MonoBehaviour
             col.GetComponent<Ball>().currentSling = spring;
             spring.connectedBody = col.GetComponent<Rigidbody2D>();
             col.GetComponent<Rigidbody2D>().position = GetComponent<Rigidbody2D>().position + spring.anchor;
+            col.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+            //col.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 }

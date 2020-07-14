@@ -8,15 +8,20 @@ public class Ball : MonoBehaviour
     public float slingcooldown;
     public float maxVelocity;
     public float maxDragDistance;
+    public float minDragDistance;
     public float bounceCountDelay;
     public LayerMask wallLayers;
     private float bounceDelayCounter;
     private float radius;
     private bool isScoredAlready = false;
 
+    private Vector2 anchorPos,mousePos,slingPos,desiredPos,desiredDirection;
+
+
     public bool isInSling = false;
     [HideInInspector] public SpringJoint2D currentSling;
     public bool isPressed = false;
+    public bool isDragged;
 
     Rigidbody2D rb;
     GameManager gm;
@@ -40,58 +45,61 @@ public class Ball : MonoBehaviour
             isScoredAlready = true;
         }
 
+        if (isPressed && anchorPos == Vector2.zero)
+            anchorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        else if (!isPressed && anchorPos != Vector2.zero)
+            anchorPos = Vector2.zero;
+
         if (isInSling && isPressed)
         {
-            Vector2 anchorPos = currentSling.GetComponent<Rigidbody2D>().position;
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 desiredPos = Vector2.zero;
-            if (Vector3.Distance(mousePos, anchorPos) <= maxDragDistance)
-                desiredPos = mousePos;
-            else
-                desiredPos = anchorPos + (mousePos - anchorPos).normalized * maxDragDistance;
-
-            Vector2 desiredDirection = (desiredPos - anchorPos).normalized;
-
-            RaycastHit2D hit1 = Physics2D.Linecast(anchorPos, desiredPos + desiredDirection * radius, wallLayers);
-            RaycastHit2D hit2 = Physics2D.Linecast(desiredPos + Vector2.Perpendicular(desiredDirection), desiredPos + Vector2.Perpendicular(-desiredDirection) * radius, wallLayers);
-            
-            //Debug Draws
-            Debug.DrawLine(anchorPos, desiredPos + desiredDirection * radius, Color.magenta);
-            Debug.DrawLine(desiredPos + Vector2.Perpendicular(desiredDirection), desiredPos + Vector2.Perpendicular(-desiredDirection) * radius, Color.red);
-
-            if (hit1.collider == null && hit2.collider == null)
-                rb.position = desiredPos;
-            else
-            {
-                //Search for the nearest opening.
-                Vector2 currentPos = new Vector2();
-                bool isViable = false;
-                for (float f = 0f; isViable == false; f -= 0.1f)
-                {
-                    Vector2 hitPoint = new Vector2();
-                    if (hit1.collider != null)
-                        hitPoint = hit1.point;
-                    else
-                        hitPoint = desiredPos;
-
-                    RaycastHit2D hitSearch = Physics2D.Linecast(hitPoint + desiredDirection * (f - radius) + Vector2.Perpendicular(desiredDirection), hitPoint + desiredDirection * (f - radius) + Vector2.Perpendicular(-desiredDirection) * radius, wallLayers);
-                    Debug.DrawLine(hitPoint + desiredDirection * (f - radius) + Vector2.Perpendicular(desiredDirection), hitPoint + desiredDirection * (f - radius) + Vector2.Perpendicular(-desiredDirection) * radius, Color.blue);
-
-                    if (hitSearch.collider == null)
-                    {
-                        isViable = true;
-                        currentPos = hitPoint + desiredDirection * (f - radius);
-                    }
-                }
-                rb.position = currentPos;
-            }
+            SlingBehaviour();
         }
+
         if (rb.velocity.magnitude > maxVelocity)
         {
             rb.velocity = rb.velocity.normalized * maxVelocity;
         }
     }
     
+    private void SlingBehaviour()
+    {
+        slingPos = currentSling.GetComponent<Rigidbody2D>().position + currentSling.anchor;
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (Vector2.Distance(anchorPos, mousePos) <= minDragDistance)
+            isDragged = false;
+        else
+            isDragged = true;
+
+        if (Vector2.Distance(anchorPos, mousePos) <= maxDragDistance)
+            desiredPos = slingPos + (mousePos - anchorPos);
+        else
+            desiredPos = slingPos + (mousePos - anchorPos).normalized * maxDragDistance;
+
+        desiredDirection = (desiredPos - slingPos).normalized;
+
+        RaycastHit2D hit = Physics2D.CircleCast(slingPos, radius, desiredDirection, Vector2.Distance(slingPos,desiredPos), wallLayers);
+
+        if (hit.collider == null)
+            rb.position = desiredPos;
+        else
+        {
+            Vector2 newPos = new Vector2();
+            bool isViable = false;
+
+            for (float f = 0f; isViable == false; f -= 0.2f)
+            {
+                RaycastHit2D hitSearch = Physics2D.CircleCast(slingPos, radius, desiredDirection, Vector2.Distance(slingPos, desiredPos) + f, wallLayers);
+
+                if (hitSearch.collider == null)
+                {
+                    isViable = true;
+                    newPos = slingPos + desiredDirection * (Vector2.Distance(slingPos, desiredPos) + f);
+                }
+            }
+            rb.position = newPos;
+        }
+    }
     public IEnumerator Release()
     {
         yield return new WaitUntil(hasReachedReleasePoint);
@@ -105,8 +113,7 @@ public class Ball : MonoBehaviour
 
     private bool hasReachedReleasePoint()
     {
-        Vector2 anchorPos = currentSling.GetComponent<Rigidbody2D>().position + currentSling.anchor;
-        if (Vector2.Distance(rb.position, anchorPos) <= releaseDistance)
+        if (Vector2.Distance(rb.position, slingPos) <= releaseDistance)
             return true;
 
             return false;

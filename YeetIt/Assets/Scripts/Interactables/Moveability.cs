@@ -56,7 +56,6 @@ public class Moveability : MonoBehaviour
             targetDegree += 180;
 
         degrees = myDegree - targetDegree;
-
         currentRotationSpeed = degrees / (distance / speed);
     }
 }
