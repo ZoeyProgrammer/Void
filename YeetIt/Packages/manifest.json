@@ -4,6 +4,7 @@
     "com.google.firebase.app": "6.15.2",
     "com.google.firebase.auth": "6.15.2",
     "com.google.firebase.database": "6.15.2",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.addressables": "1.1.10",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ide.rider": "1.1.4",
