@@ -14,7 +14,7 @@ public class MoveabiltyEditor : Editor
         if (GUILayout.Button("Add Keyframe"))
         {
             GameObject keyframe = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Technical/Keyframe.prefab");
-            GameObject key = Instantiate(keyframe, moveability.transform.position, Quaternion.identity);
+            GameObject key = Instantiate(keyframe, moveability.transform.position, moveability.transform.rotation);
             moveability.keyframes.Add(key.transform);
         }
 
