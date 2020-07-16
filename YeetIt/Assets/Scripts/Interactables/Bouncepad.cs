@@ -16,7 +16,7 @@ public class Bouncepad : MonoBehaviour
     {
         if (col.tag == Tags.ball)
         {
-            if (col.GetComponent<Ball>().isInSling)
+            if (!col.GetComponent<Ball>().isInSling && col.GetComponent<Ball>().currentSling.connectedBody == null)
             {
                 col.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 col.GetComponent<Rigidbody2D>().AddForce(transform.up * impulsePower, ForceMode2D.Impulse);
