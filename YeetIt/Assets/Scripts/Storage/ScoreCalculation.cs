@@ -13,6 +13,6 @@ public class ScoreCalculation : MonoBehaviour
 
     private void Update()
     {
-        gm.score = Mathf.RoundToInt(gm.height);
+        gm.score = Mathf.RoundToInt(gm.height + gm.timesBounced);
     }
 }

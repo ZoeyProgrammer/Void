@@ -763,6 +763,7 @@ GameObject:
   - component: {fileID: 530033849}
   - component: {fileID: 530033848}
   - component: {fileID: 530033850}
+  - component: {fileID: 530033851}
   m_Layer: 0
   m_Name: LevelGenerator
   m_TagString: Untagged
@@ -857,6 +858,19 @@ MonoBehaviour:
   waystone: {fileID: 3125467183823840787, guid: ea7a1a6189167bc4e892d4134c251bfa,
     type: 3}
   unitsBetweenWaystones: 50
+--- !u!114 &530033851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530033847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97fdcd0a8906d340bd3510d98832230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 1110488164166075972, guid: 826ebc18d9a1f504bac5cb11079b4791, type: 3}
 --- !u!1 &578587499
 GameObject:
   m_ObjectHideFlags: 0
