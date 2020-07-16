@@ -13,7 +13,7 @@ public class Slingshot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == Tags.ball && col.GetComponent<Ball>().currentSling == null)
+        if (col.tag == Tags.ball && !col.GetComponent<Ball>().isInSling)
         {
             col.GetComponent<Ball>().isInSling = true;
             col.GetComponent<Ball>().currentSling = spring;
