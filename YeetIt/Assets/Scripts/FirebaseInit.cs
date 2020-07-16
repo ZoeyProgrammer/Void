@@ -7,8 +7,6 @@ using UnityEngine.Events;
 
 public class FirebaseInit : MonoBehaviour
 {
-    public UnityEvent OnFirebaseInitialized = new UnityEvent();
-
     GameManager gm;
     DBManager db;
 
@@ -28,10 +26,13 @@ public class FirebaseInit : MonoBehaviour
                 Debug.LogError($"Failed to initilaize Firebase with {task.Exception}");
                 return;
             }
-            OnFirebaseInitialized.Invoke();
             Debug.Log("Firebase has been Initilaized");
+            FirebaseAuthInit();
         });
 
+    }
+    void FirebaseAuthInit()
+    {
         FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
         auth.SignInAnonymouslyAsync().ContinueWith(task =>
         {
@@ -49,6 +50,5 @@ public class FirebaseInit : MonoBehaviour
 
             db.RetrieveHighscore();
         });
-
     }
 }
