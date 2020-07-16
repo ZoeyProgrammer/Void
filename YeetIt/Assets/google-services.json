@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "247475910763",
+    "firebase_url": "https://void-950df.firebaseio.com",
+    "project_id": "void-950df",
+    "storage_bucket": "void-950df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247475910763:android:22bfe936d9f59cee2a992e",
+        "android_client_info": {
+          "package_name": "com.Void.YeetIt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247475910763-9tjsbf35h2bf4n4pna420h9hsh1l78sh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Void.YeetIt",
+            "certificate_hash": "1ee69d6e9113267c240822eee0e92ef85bbbd664"
+          }
+        },
+        {
+          "client_id": "247475910763-r94fn2qj7ufhuvjq0d7l7d3lbcssbfel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAR5HgY9aEIWYop9VOsfnB_YJBwmJo-Jjs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247475910763-r94fn2qj7ufhuvjq0d7l7d3lbcssbfel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
