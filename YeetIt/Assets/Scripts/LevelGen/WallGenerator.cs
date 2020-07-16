@@ -6,7 +6,7 @@ public class WallGenerator : MonoBehaviour
 {
     public GameObject wall;
     private float wallOffset = 30;
-    private float wallHeight = 20;
+    private float wallHeight = 30;
     private float currentGenHeight = -10;
 
     LevelGenerator levelGen;
