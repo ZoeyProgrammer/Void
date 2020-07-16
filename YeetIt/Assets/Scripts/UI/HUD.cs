@@ -6,7 +6,6 @@ using TMPro;
 
 public class HUD : MonoBehaviour
 {
-    public TextMeshProUGUI bounceCounter;
     public TextMeshProUGUI scoreCounter;
 
     GameManager gm;
@@ -17,7 +16,6 @@ public class HUD : MonoBehaviour
     }
     private void Update()
     {
-        bounceCounter.text = "Times Bounced: " + gm.timesBounced;
-        scoreCounter.text = "Height: " + Mathf.RoundToInt(gm.height);
+        scoreCounter.text = "Score: " + Mathf.RoundToInt(gm.score);
     }
 }
