@@ -20,7 +20,7 @@ public class FirebaseInit : MonoBehaviour
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
-            FirebaseAnalytics.SetAnalyticsCollectionEnabled(true);
+            Debug.Log("Firebase Initializing..");
             if (task.Exception != null)
             {
                 Debug.LogError($"Failed to initilaize Firebase with {task.Exception}");
@@ -30,25 +30,27 @@ public class FirebaseInit : MonoBehaviour
             FirebaseAuthInit();
         });
 
-    }
-    void FirebaseAuthInit()
-    {
-        FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
-        auth.SignInAnonymouslyAsync().ContinueWith(task =>
+        void FirebaseAuthInit()
         {
-            if (task.IsFaulted)
+            FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
+
+            auth.SignInAnonymouslyAsync().ContinueWith(task =>
             {
-                Debug.LogError($"Failed to log in Anonymously with {task.Exception}");
-                gm.isOnline = false;
-                return;
-            }
+                if (task.IsFaulted)
+                {
+                    Debug.LogError($"Failed to log in Anonymously with {task.Exception}");
+                    gm.isOnline = false;
+                    return;
+                }
 
-            FirebaseUser newUser = task.Result;
-            Debug.Log($"User signed in successfully: {newUser.DisplayName} ({newUser.UserId})");
-            gm.isOnline = true;
-            gm.userID = newUser.UserId;
+                FirebaseUser newUser = task.Result;
+                Debug.Log($"User signed in successfully: {newUser.DisplayName} ({newUser.UserId})");
+                gm.isOnline = true;
+                gm.userID = newUser.UserId;
 
-            db.RetrieveHighscore();
-        });
+                db.RetrieveHighscore();
+            });
+        }
+
     }
 }
