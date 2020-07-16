@@ -33,7 +33,6 @@ public class FirebaseInit : MonoBehaviour
         });
 
         FirebaseAuth auth = Firebase.Auth.FirebaseAuth.DefaultInstance;
-
         auth.SignInAnonymouslyAsync().ContinueWith(task =>
         {
             if (task.IsFaulted)
