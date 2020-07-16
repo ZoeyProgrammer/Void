@@ -788,46 +788,10 @@ MonoBehaviour:
   hcList:
   - minHeight: 0
     maxHeight: 10
-  - minHeight: 11
-    maxHeight: 21
-  - minHeight: 22
-    maxHeight: 502
-  - minHeight: 502
-    maxHeight: 501
-  - minHeight: 501
-    maxHeight: 502
-  - minHeight: 501
-    maxHeight: 600
-  - minHeight: 601
-    maxHeight: 700
-  - minHeight: 701
-    maxHeight: 800
-  - minHeight: 801
-    maxHeight: 900
-  - minHeight: 901
-    maxHeight: 1000
-  - minHeight: 1001
-    maxHeight: 1500
-  - minHeight: 1501
-    maxHeight: 2000
-  - minHeight: 2001
-    maxHeight: 2500
-  - minHeight: 2501
-    maxHeight: 3000
-  - minHeight: 3001
-    maxHeight: 4000
-  - minHeight: 4001
-    maxHeight: 5000
-  - minHeight: 5001
-    maxHeight: 6000
-  - minHeight: 6001
-    maxHeight: 7000
-  - minHeight: 7001
-    maxHeight: 8000
-  - minHeight: 8001
-    maxHeight: 9000
-  - minHeight: 7000
-    maxHeight: 20000
+  - minHeight: 10
+    maxHeight: 20
+  - minHeight: 20
+    maxHeight: 1e+30
   preGenerationLimit: 5
 --- !u!4 &530033849
 Transform:
@@ -1712,7 +1676,7 @@ PrefabInstance:
     - target: {fileID: 2837322987501850602, guid: cac3e768d17cc464eb31e30dace43e9a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2837322987501850602, guid: cac3e768d17cc464eb31e30dace43e9a,
         type: 3}

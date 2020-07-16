@@ -9,7 +9,7 @@ public class LevelGenerator : MonoBehaviour
     GameManager gm;
 
     private List<DifficultyClass> dcList = new List<DifficultyClass>();
-    public HeightClass[] hcList = new HeightClass[21];
+    public HeightClass[] hcList;
     private float currentGenHeight = 0;
     public float preGenerationLimit;
 
@@ -21,7 +21,7 @@ public class LevelGenerator : MonoBehaviour
     private void Start()
     {
         int i = 0;
-        while (i <= 20)
+        while (i <= hcList.Length -1)
         {
             List<GameObject> list = snippetList.snippetList.FindAll(x => x.GetComponent<Snippet>().difficultyClass == i);
             dcList.Add(new DifficultyClass(list, hcList[i]));
