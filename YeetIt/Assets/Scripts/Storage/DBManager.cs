@@ -44,7 +44,7 @@ public class DBManager : MonoBehaviour
             {
                 DataSnapshot friendName = await database.GetReference("users/" + friendID + "/name").GetValueAsync();
                 if (friendName.Exists)
-                    allSegments.Add(new ScoreSave(friendName.Value.ToString() , int.Parse(friendScore.Value.ToString())));
+                    allSegments.Add(new ScoreSave(friendName.Value.ToString() , int.Parse(friendScore.Value.ToString()), 0));
             }
         }
         return allSegments;

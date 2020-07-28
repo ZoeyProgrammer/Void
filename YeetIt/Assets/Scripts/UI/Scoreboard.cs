@@ -11,6 +11,7 @@ public class Scoreboard : MonoBehaviour
     public GameObject scoreSegment;
     public Transform scoreContent;
 
+    private ScoreSave playerSave; 
     GameManager gm;
     DBManager db;
 
@@ -28,21 +29,34 @@ public class Scoreboard : MonoBehaviour
 
     private void LoadPlayerScore()
     {
-        GameObject segment = Instantiate(scoreSegment, scoreContent);
-        segment.GetComponent<ScoreSegments>().username = "You";
-        segment.GetComponent<ScoreSegments>().highscore = gm.highscore;
+        //GameObject segment = Instantiate(scoreSegment, scoreContent);
+        playerSave = new ScoreSave("You", gm.highscore, 0);
+        //segment.GetComponent<ScoreSegments>().scoreSave = playerSave;
     }
 
     private IEnumerator LoadSegments()
     {
         var highscoreListTask = db.HighscoreList();
         yield return new WaitUntil(() => highscoreListTask.IsCompleted);
-        foreach (ScoreSave save in highscoreListTask.Result)
+
+        highscoreListTask.Result.Add(playerSave);
+        ScoreSave[] segmentsOrdered = highscoreListTask.Result.OrderByDescending(x => x.highscore).ToArray();
+        for (int i = 0; i < segmentsOrdered.Length; i++)
         {
-            Debug.Log(save.username + " " + save.highscore);
-            GameObject segment = Instantiate(scoreSegment,scoreContent);
-            segment.GetComponent<ScoreSegments>().username = save.username;
-            segment.GetComponent<ScoreSegments>().highscore = save.highscore;
+            Debug.Log(segmentsOrdered[i].username + " Score:" + segmentsOrdered[i].highscore);
+            segmentsOrdered[i].rank = i + 1;
+        }
+
+        foreach (ScoreSave save in segmentsOrdered)
+        {
+            if (save.rank <= 3 && save.rank != playerSave.rank ||
+                save.rank == playerSave.rank + 1 ||
+                save.rank == playerSave.rank -1 ||
+                save.rank == playerSave.rank)
+            {
+                GameObject segment = Instantiate(scoreSegment, scoreContent);
+                segment.GetComponent<ScoreSegments>().scoreSave = save;
+            }
         }
         SortSegments();
     }
@@ -59,7 +73,7 @@ public class Scoreboard : MonoBehaviour
 
         foreach (ScoreSegments s in FindObjectsOfType<ScoreSegments>())
         {
-            if (s.username == "You")
+            if (s.scoreSave.username == "You")
                 segment = s.gameObject;
         }
 
@@ -73,7 +87,7 @@ public class Scoreboard : MonoBehaviour
     public void SortSegments()
     {
         ScoreSegments[] segmentList = FindObjectsOfType<ScoreSegments>();
-        ScoreSegments[] segmentsOrdered = segmentList.OrderByDescending(x => x.highscore).ToArray();
+        ScoreSegments[] segmentsOrdered = segmentList.OrderBy(x => x.scoreSave.rank).ToArray();
         
         for (int i = 0; i < segmentsOrdered.Length; i++)
         {

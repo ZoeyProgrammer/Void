@@ -5,15 +5,16 @@ using TMPro;
 
 public class ScoreSegments : MonoBehaviour
 {
-    public string username = "[Not Assigned]";
-    public int highscore = 0;
+    public ScoreSave scoreSave;
 
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI highscoreText;
+    public TextMeshProUGUI rankText;
 
     private void Start()
     {
-        nameText.text = "Name: " + username;
-        highscoreText.text = "Highscore: " + highscore;
+        nameText.text = "Name: " + scoreSave.username;
+        highscoreText.text = "Highscore: " + scoreSave.highscore;
+        rankText.text = "#" + scoreSave.rank;
     }
 }
