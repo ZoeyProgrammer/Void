@@ -6,9 +6,17 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource collisionPlayer;
     public AudioSource bouncepadPlayer;
+    public AudioSource musicPlayer;
 
     public AudioClip[] collisionSounds;
     public AudioClip[] bouncepadSounds;
+    public AudioClip[] musicClips;
+
+    private void Update()
+    {
+        if (!musicPlayer.isPlaying)
+            PlayMusic();
+    }
 
     public void PlayCollisonSound()
     {
@@ -22,5 +30,12 @@ public class AudioManager : MonoBehaviour
         int randomIndex = Random.Range(0, bouncepadSounds.Length);
         bouncepadPlayer.clip = bouncepadSounds[randomIndex];
         bouncepadPlayer.Play();
+    }
+
+    private void PlayMusic()
+    {
+        int randomIndex = Random.Range(0, musicClips.Length);
+        musicPlayer.clip = musicClips[randomIndex];
+        musicPlayer.Play();
     }
 }
