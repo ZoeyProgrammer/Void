@@ -120,6 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 754a6f3b19f21a54d8767fa84ee04fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 914623857440338795}
+  lights: {fileID: 5738491134599695765}
+  particles: {fileID: 9021030823136971000}
+  blue: {r: 0, g: 0.85882354, b: 0.73333335, a: 0.28235295}
 --- !u!50 &3546220485166133753
 Rigidbody2D:
   serializedVersion: 4
