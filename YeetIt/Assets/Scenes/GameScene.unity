@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -679,11 +679,13 @@ MonoBehaviour:
     type: 3}
   hcList:
   - minHeight: 0
-    maxHeight: 10
-  - minHeight: 10
-    maxHeight: 20
-  - minHeight: 20
-    maxHeight: 1e+30
+    maxHeight: 50
+  - minHeight: 50
+    maxHeight: 100
+  - minHeight: 100
+    maxHeight: 150
+  - minHeight: 150
+    maxHeight: 20000
   preGenerationLimit: 5
 --- !u!4 &530033849
 Transform:
