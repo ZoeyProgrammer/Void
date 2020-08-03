@@ -5,10 +5,15 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     MenuController menu;
+    GameManager gm;
+
+    public GameObject MusicButtonOn, MusicButtonOff, SFXButtonOn, SFXButtonOFF;
 
     private void Start()
     {
+        gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
         menu = FindObjectOfType<MenuController>();
+        UpdateButtons();
     }
 
     public void PlayButton()
@@ -21,13 +26,23 @@ public class MainMenu : MonoBehaviour
         menu.OpenScoreboard();
     }
 
-    public void OptionsButton()
+    public void SFXButton()
     {
-        menu.OpenOptions();
+        menu.ToggleSFX();
+        UpdateButtons();
     }
 
-    public void SkinsButton()
+    public void MusicButton()
     {
-        menu.OpenSkins();
+        menu.ToggleMusic();
+        UpdateButtons();
+    }
+
+    public void UpdateButtons()
+    {
+        MusicButtonOn.SetActive(gm.isMusicOn);
+        MusicButtonOff.SetActive(!gm.isMusicOn);
+        SFXButtonOn.SetActive(gm.isSFXOn);
+        SFXButtonOFF.SetActive(!gm.isSFXOn);
     }
 }

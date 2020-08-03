@@ -7,6 +7,7 @@ using TMPro;
 
 public class OptionsMenu : MonoBehaviour
 {
+    /*
     public Slider musicSlider;
     public Slider soundSlider;
     public TextMeshProUGUI musicText;
@@ -49,4 +50,5 @@ public class OptionsMenu : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+    */
 }

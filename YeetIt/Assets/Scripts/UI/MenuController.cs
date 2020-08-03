@@ -2,53 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MenuController : MonoBehaviour
 {
     public GameObject mainMenu;
-    public GameObject optionsMenu;
     public GameObject scoreboardMenu;
-    public GameObject skinsMenu;
+    public AudioMixer masterMixer;
 
     private GameObject currentMainMenu;
-    private GameObject currentOptionsMenu;
     private GameObject currentScoreboardMenu;
-    private GameObject currentSkinsMenu;
 
     private bool mainMenuActive;
-    private bool optionsMenuActive;
     private bool scoreboardMenuActive;
-    private bool skinsMenuActive;
 
     GameManager gm;
 
     private void Start()
     {
         gm = GameObject.FindGameObjectWithTag(Tags.gm).GetComponent<GameManager>();
+
         if (gm.goToScore)
         {
             OpenScoreboard();
             gm.goToScore = false;
         }
         else
+        {
             OpenMainMenu();
+        }
+            
     }
 
     private void Update()
     {
-        if (optionsMenuActive && currentOptionsMenu == null)
-        {
-            optionsMenuActive = false;
-            OpenMainMenu();
-        }
         if (scoreboardMenuActive && currentScoreboardMenu == null)
         {
             scoreboardMenuActive = false;
-            OpenMainMenu();
-        }
-        if (skinsMenuActive && currentSkinsMenu == null)
-        {
-            skinsMenuActive = false;
             OpenMainMenu();
         }
     }
@@ -67,27 +57,38 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    public void OpenOptions()
+    public void OpenScoreboard()
     {
-        if (currentOptionsMenu == null)
+        scoreboardMenuActive = true;
+        currentScoreboardMenu = Instantiate(scoreboardMenu, this.transform);
+        Destroy(currentMainMenu);
+    }
+
+    public void ToggleMusic()
+    {
+        if (gm.isMusicOn)
         {
-            optionsMenuActive = true;
-            currentOptionsMenu = Instantiate(optionsMenu, this.transform);
-            Destroy(currentMainMenu);
+            gm.isMusicOn = false;
+            masterMixer.SetFloat("musicVolume", -80);
+        }
+        else
+        {
+            gm.isMusicOn = true;
+            masterMixer.SetFloat("musicVolume", 0);
         }
     }
 
-    public void OpenScoreboard()
+    public void ToggleSFX()
     {
-        optionsMenuActive = true;
-        currentOptionsMenu = Instantiate(scoreboardMenu, this.transform);
-        Destroy(currentMainMenu);
-    }
-
-    public void OpenSkins()
-    {
-        optionsMenuActive = true;
-        currentOptionsMenu = Instantiate(skinsMenu, this.transform);
-        Destroy(currentMainMenu);
+        if (gm.isSFXOn)
+        {
+            gm.isSFXOn = false;
+            masterMixer.SetFloat("soundVolume", -80);
+        }
+        else
+        {
+            gm.isSFXOn = true;
+            masterMixer.SetFloat("soundVolume", 0);
+        }
     }
 }

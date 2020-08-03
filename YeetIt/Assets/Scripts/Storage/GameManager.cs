@@ -14,8 +14,8 @@ public class GameManager : MonoBehaviour
     public float height;        //Gets Updated everytime the ball enters a Sling
     public float currHeight;    //Gets Updated all the time
 
-    public float musicVolume;
-    public float soundVolume;
+    public bool isMusicOn;      //Is Music enabled currently
+    public bool isSFXOn;        //Is SFX enabled currently
 
     public bool goToScore;  //For Menu Switching (Yes, I know this is the lazy way..)
     public bool isOnline;  //To check if Auth has worked

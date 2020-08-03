@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -601,7 +601,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -675,8 +675,9 @@ GameObject:
   - component: {fileID: 1872710064}
   - component: {fileID: 1872710063}
   - component: {fileID: 1872710062}
-  - component: {fileID: 1872710066}
   - component: {fileID: 1872710067}
+  - component: {fileID: 1872710068}
+  - component: {fileID: 1872710066}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -772,9 +773,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1872710061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c41bfa3ef08b87a4a8b3f17c3199e1d3, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2f2bf011a48850e4ebc8a1720a753408, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!114 &1872710067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,8 +806,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 7221582603652951368, guid: af94ced2f12d0064eb6566112ab6b504,
     type: 3}
-  optionsMenu: {fileID: 6950959341994418003, guid: 96f2fa323b8a03a409dc162fd1d4a684,
-    type: 3}
   scoreboardMenu: {fileID: 1907532304996450530, guid: 29f7df6dfc2fbba408270775039f544e,
     type: 3}
-  skinsMenu: {fileID: 0}
+  masterMixer: {fileID: 24100000, guid: f943a44f0484ced49a4eeddd1061009c, type: 2}
+--- !u!222 &1872710068
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872710061}
+  m_CullTransparentMesh: 0

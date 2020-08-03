@@ -66,8 +66,8 @@ MonoBehaviour:
   score: 0
   height: 0
   currHeight: 0
-  musicVolume: 0
-  soundVolume: 0
+  isMusicOn: 1
+  isSFXOn: 1
   goToScore: 0
   isOnline: 0
 --- !u!114 &3620527668406217648
@@ -152,6 +152,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4080fed96fa4d6a48a5f6ba813dda6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnFirebaseInitialized:
-    m_PersistentCalls:
-      m_Calls: []

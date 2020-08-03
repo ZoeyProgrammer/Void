@@ -6,7 +6,6 @@ using TMPro;
 public class Deathscreen : MonoBehaviour
 {
     public TextMeshProUGUI score;
-    public GameObject shareButton;
     public GameObject scoreButton;
 
     private bool isNewHighscore;
@@ -37,9 +36,6 @@ public class Deathscreen : MonoBehaviour
             isNewHighscore = false;
             score.text = "Score:" + gm.score.ToString();
         }
-
-        shareButton.SetActive(isNewHighscore);
-        scoreButton.SetActive(!isNewHighscore);
     }
 
     private void ResetScore()
@@ -48,12 +44,6 @@ public class Deathscreen : MonoBehaviour
         gm.timesBounced = 0;
         gm.currHeight = 0;
         gm.height = 0;
-    }
-
-    public void ShareButton()
-    {
-        ResetScore();
-        menu.Share();
     }
 
     public void ScoreButton()
