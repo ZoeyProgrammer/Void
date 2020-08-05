@@ -9,6 +9,8 @@ public class Splashscreen : MonoBehaviour
     public Image logo;
     public Image gaLogo;
 
+    private bool loadingMenu = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +28,9 @@ public class Splashscreen : MonoBehaviour
         {
             logo.color = new Color(logo.color.r, logo.color.g, logo.color.b, logo.color.a + 0.01f);
         }
-        else if (gaLogo.color.a <= 0 && logo.color.a >= 1)
+        else if (loadingMenu == false && gaLogo.color.a <= 0 && logo.color.a >= 1)
         {
+            loadingMenu = true;
             SceneManager.LoadSceneAsync("MainMenu");
         }
     }
