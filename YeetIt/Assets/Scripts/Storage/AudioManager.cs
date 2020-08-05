@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         if (!musicPlayer.isPlaying)
-            PlayMusic();
+           PlayMusic();
     }
 
     public void PlayCollisonSound()
@@ -38,4 +38,5 @@ public class AudioManager : MonoBehaviour
         musicPlayer.clip = musicClips[randomIndex];
         musicPlayer.Play();
     }
-}
+
+    }
